@@ -8,23 +8,23 @@ namespace GenericsDemo
         {
             int[] intArray = { 1, 2, 3, 4, 5 };
             double[] doubleArray = { 1.2, 1.3, 1.4, 1.5 };
-            toprInt(intArray);
-            toprDouble(doubleArray);
+            new PrintArray<int>(intArray).toPrint();
+            new PrintArray<double>(doubleArray).toPrint();
         }
-        public static void toprInt(int[] inputArray)
+    }
+}
+public class PrintArray<T>
+{
+    private T[] inputArray;
+    public PrintArray(T[] inputArray)
+    {
+        this.inputArray = inputArray;
+    }
+    public void toPrint()
+    {
+        foreach (var item in inputArray)
         {
-            foreach (int item in inputArray)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(item);
         }
-        public static void toprDouble(double[] inputArray)
-        {
-            foreach (int item in inputArray)
-            {
-                Console.WriteLine(item+"\n");
-            }
-        }
-
     }
 }
